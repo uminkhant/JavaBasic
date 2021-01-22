@@ -48,6 +48,7 @@ public class Main extends Application implements Initializable {
 	private PersonService service;
 	private Person p;
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		service = new PersonService();
