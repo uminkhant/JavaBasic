@@ -1,0 +1,28 @@
+
+.element_color{
+	-fx-text-fill: #FFFFFF;
+	
+}
+
+.ico_color{
+	-fx-fill:#af0069;
+	-fx-color:#af0069;
+}
+
+.row_color{
+	-fx-background-color: #DDDDDD;
+}
+
+.side_bar_color{
+	-fx-background-color: #03506f;
+}
+
+.button_color{
+	-fx-background-color: #03506f;
+	-fx-background-radius: 10px;
+	-fx-border-radius: 10px;
+}
+
+.button_color:hover{
+	-fx-background-color:#62959c;
+}
