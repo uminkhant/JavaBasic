@@ -7,11 +7,14 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -19,7 +22,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="500.0" prefWidth="700.0" styleClass="row_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkt.jdc.controller.UserController">
+<HBox prefHeight="500.0" prefWidth="900.0" styleClass="row_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkt.jdc.controller.PatientController">
    <children>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="269.0">
          <padding>
@@ -93,8 +96,11 @@
                   </Label>
                   <HBox alignment="CENTER_LEFT" spacing="3.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <RadioButton fx:id="rbn_yes" mnemonicParsing="false" text="Yes" />
-                        <RadioButton fx:id="rbn_no" layoutX="10.0" layoutY="17.0" mnemonicParsing="false" text="No" />
+                        <RadioButton fx:id="rbn_yes" mnemonicParsing="false" selected="true" text="Yes">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="married" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="rbn_no" layoutX="10.0" layoutY="17.0" mnemonicParsing="false" text="No" toggleGroup="$married" />
                      </children>
                   </HBox>
                   <TextField fx:id="tf_contact" layoutX="127.0" layoutY="42.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
@@ -110,34 +116,52 @@
       </VBox>
       <VBox HBox.hgrow="ALWAYS">
          <children>
-            <TableView fx:id="tv_patient" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-              <columns>
-                <TableColumn fx:id="col_num" prefWidth="43.0" resizable="false" text="No." />
-                <TableColumn prefWidth="129.0" resizable="false" text="Patient">
-                	<cellValueFactory>
-                		<PropertyValueFactory property="name" />
-                	</cellValueFactory>
-                </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Age">
-                	<cellValueFactory>
-                		<PropertyValueFactory property="loginId" />
-                	</cellValueFactory>
-                </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Gender">
-                	<cellValueFactory>
-                		<PropertyValueFactory property="role" />
-                	</cellValueFactory>
-                </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Password">
-                	<cellValueFactory>
-                		<PropertyValueFactory property="password" />
-                	</cellValueFactory>
-                </TableColumn>
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="504.0" prefWidth="733.0">
+                     <children>
+                        <TableView fx:id="tv_patient" prefHeight="200.0" prefWidth="818.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-618.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="col_num" prefWidth="43.0" resizable="false" text="No." />
+                            <TableColumn prefWidth="129.0" resizable="false" text="Patient">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="name" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                              <TableColumn prefWidth="75.0" text="Age">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="age" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                              <TableColumn prefWidth="75.0" text="Gender">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="gender" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                              <TableColumn prefWidth="75.0" text="Married">
+                            	<cellValueFactory>
+                            		<PropertyValueFactory property="married" />
+                            	</cellValueFactory>
+                            </TableColumn>
+                              <TableColumn prefWidth="75.0" text="Contact">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="contact" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="75.0" text="Address">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="address" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
          </children>
       </VBox>
    </children>
