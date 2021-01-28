@@ -1,5 +1,6 @@
 module clinic_system {
 
+	exports com.mkt.jdc;
 	requires javafx.graphics;
 	requires lombok;
 	requires javafx.fxml;
@@ -9,6 +10,5 @@ module clinic_system {
 	
 	opens com.mkt.jdc.controller;
 	opens com.mkt.jdc.model to javafx.base;
-	exports com.mkt.jdc to  javafx.graphics;
 	
 }

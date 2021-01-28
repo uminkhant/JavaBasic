@@ -7,8 +7,6 @@ import com.mkt.jdc.model.User;
 import com.mkt.jdc.model.User.Role;
 import com.mkt.jdc.service.UserService;
 import com.mkt.jdc.util.ClinicException;
-import com.mkt.jdc.util.MessageManager;
-import com.mkt.jdc.util.MessageManager.MessageType;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.fxml.FXML;
@@ -20,6 +18,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import mkt.lib.MKMessage;
+import mkt.lib.MKMessage.MessageType;
 
 public class UserController implements Initializable {
 
@@ -51,7 +51,7 @@ public class UserController implements Initializable {
 	@FXML
 	private TableColumn<User, Integer> col_num;
 	private UserService service;
-	private MessageManager mm;
+	private MKMessage mm;
 	private User user;
 
 	@FXML
@@ -63,7 +63,7 @@ public class UserController implements Initializable {
 
 			user.setActive(false);
 			service.updateUser(user);
-			mm.showMessage("Successfully delete user !", MessageType.SUCCESSFUL);
+			mm.showMessage("Successfully delete user !",MessageType.SUCCESS);
 			loadView();
 			clear();
 
@@ -99,17 +99,17 @@ public class UserController implements Initializable {
 
 			if (tf_id.getText().isEmpty() || tf_id.getText() == null) {
 				service.saveUser(user);
-				mm.showMessage("Successfully save user !", MessageType.SUCCESSFUL);
+				mm.showMessage("Successfully save user !",MessageType.SUCCESS);
 			} else {
 				user.setId(Integer.parseInt(tf_id.getText()));
 				service.updateUser(user);
-				mm.showMessage("Successfully update user !", MessageType.SUCCESSFUL);
+				mm.showMessage("Successfully update user !",MessageType.SUCCESS);
 			}
 			loadView();
 			clear();
 
 		} catch (Exception e) {
-			mm.showMessage(e.getMessage(), MessageType.ERROR);
+			mm.showMessage(e.getMessage(),MessageType.ERROR);
 		}
 	}
 
@@ -134,7 +134,7 @@ public class UserController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		cbo_role.getItems().addAll(Role.values());
 		service = new UserService();
-		mm = new MessageManager(lb_message);
+		mm = MKMessage.getInstance(lb_message);
 
 		col_num.setCellValueFactory(col -> new ReadOnlyObjectWrapper(tv_user.getItems().indexOf(col.getValue()) + 1));
 		loadView();
