@@ -26,7 +26,7 @@ public class LoginController {
 	TextField tf_user = new TextField();
 	PasswordField pf_password = new PasswordField();
 
-	Button btnEnter = new Button("Enter");
+	Button btnEnter = new Button("GoTo");
 	Button btnCancelButton = new Button("Cancel");
 	private String front_color = "#af0069";
 	private String back_color = "#DDDDDD";
