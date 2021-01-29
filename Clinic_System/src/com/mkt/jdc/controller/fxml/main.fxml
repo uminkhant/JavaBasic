@@ -10,87 +10,149 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkt.jdc.controller.MainController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" styleClass="background_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkt.jdc.controller.MainController">
    <children>
-      <HBox alignment="CENTER_RIGHT">
+      <HBox alignment="BOTTOM_LEFT" spacing="10.0">
          <children>
-            <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
-            <Label fx:id="lb_user" text="User">
+            <SVGPath content="M20 11c0-0.547-0.453-1-1-1s-1 0.453-1 1 0.453 1 1 1 1-0.453 1-1zM22 11c0 1.313-0.828 2.406-2 2.828v6.172c0 3.313-3.141 6-7 6s-7-2.688-7-6v-2.063c-3.391-0.422-6-2.922-6-5.938v-8c0-0.547 0.453-1 1-1 0.094 0 0.172 0.016 0.25 0.031 0.344-0.609 1-1.031 1.75-1.031 1.109 0 2 0.891 2 2s-0.891 2-2 2c-0.359 0-0.703-0.109-1-0.281v6.281c0 2.203 2.25 4 5 4s5-1.797 5-4v-6.281c-0.297 0.172-0.641 0.281-1 0.281-1.109 0-2-0.891-2-2s0.891-2 2-2c0.75 0 1.406 0.422 1.75 1.031 0.078-0.016 0.156-0.031 0.25-0.031 0.547 0 1 0.453 1 1v8c0 3.016-2.609 5.516-6 5.938v2.063c0 2.203 2.25 4 5 4s5-1.797 5-4v-6.172c-1.172-0.422-2-1.516-2-2.828 0-1.656 1.344-3 3-3s3 1.344 3 3zM20 11c0-0.547-0.453-1-1-1s-1 0.453-1 1 0.453 1 1 1 1-0.453 1-1zM22 11c0 1.313-0.828 2.406-2 2.828v6.172c0 3.313-3.141 6-7 6s-7-2.688-7-6v-2.063c-3.391-0.422-6-2.922-6-5.938v-8c0-0.547 0.453-1 1-1 0.094 0 0.172 0.016 0.25 0.031 0.344-0.609 1-1.031 1.75-1.031 1.109 0 2 0.891 2 2s-0.891 2-2 2c-0.359 0-0.703-0.109-1-0.281v6.281c0 2.203 2.25 4 5 4s5-1.797 5-4v-6.281c-0.297 0.172-0.641 0.281-1 0.281-1.109 0-2-0.891-2-2s0.891-2 2-2c0.75 0 1.406 0.422 1.75 1.031 0.078-0.016 0.156-0.031 0.25-0.031 0.547 0 1 0.453 1 1v8c0 3.016-2.609 5.516-6 5.938v2.063c0 2.203 2.25 4 5 4s5-1.797 5-4v-6.172c-1.172-0.422-2-1.516-2-2.828 0-1.656 1.344-3 3-3s3 1.344 3 3z" scaleX="2.0" scaleY="2.0" styleClass="ico_color" translateX="10.0" translateY="-15.0" />
+            <Label styleClass="header_label" text="Clinic System Software">
                <font>
-                  <Font size="18.0" />
-               </font></Label>
+                  <Font name="DIN Condensed Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label text="By Java Developer Class ( JDC )  ph: 09256257252">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label fx:id="lb_user" text="User">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
          </children>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
       </HBox>
-      <HBox VBox.vgrow="ALWAYS">
+      <HBox>
          <children>
-            <VBox fx:id="vb_sideBar" prefHeight="662.0" prefWidth="183.0" spacing="5.0" styleClass="side_bar_color">
+            <VBox fx:id="vb_sideBar" prefHeight="664.0" prefWidth="207.0" spacing="20.0" styleClass="side_bar_color">
                <children>
                   <HBox alignment="CENTER">
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@doctor.jpeg" />
+                              <Image url="@clinic.png" />
                            </image>
                         </ImageView>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" onMouseClicked="#changeForm" spacing="3.0" styleClass="button_color">
+                  <VBox spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <SVGPath content="M24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z M10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146zM10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
-                        <Label styleClass="element_color" text="Patient">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeForm" spacing="3.0" styleClass="button_color">
+                           <children>
+                              <SVGPath content="M24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z M10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146zM10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                              <Label styleClass="element_color" text="PATIENT">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="-3.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
+                           <children>
+                              <SVGPath content="M27 0h-24c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h24c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM26 28h-22v-24h22v24zM8 18h14v2h-14zM8 22h14v2h-14zM10 9c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3s-3-1.343-3-3zM15 12h-4c-1.65 0-3 0.9-3 2v2h10v-2c0-1.1-1.35-2-3-2zM27 0h-24c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h24c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM26 28h-22v-24h22v24zM8 18h14v2h-14zM8 22h14v2h-14zM10 9c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3s-3-1.343-3-3zM15 12h-4c-1.65 0-3 0.9-3 2v2h10v-2c0-1.1-1.35-2-3-2z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </SVGPath>
+                              <Label styleClass="element_color" text="PATIENT RECORD">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="-3.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
+                           <children>
+                              <SVGPath content="M10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6zM10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
+                                 <HBox.margin>
+                                    <Insets left="7.0" />
+                                 </HBox.margin>
+                              </SVGPath>
+                              <Label styleClass="element_color" text="DOCTOR">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
+                           <children>
+                              <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </SVGPath>
+                              <Label styleClass="element_color" text="USER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="-1.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
+                           <children>
+                              <SVGPath content="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z M21 8l-5 5-5-5-3 3 5 5-5 5 3 3 5-5 5 5 3-3-5-5 5-5zM21 8l-5 5-5-5-3 3 5 5-5 5 3 3 5-5 5 5 3-3-5-5 5-5z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </SVGPath>
+                              <Label styleClass="element_color" text="EXIT">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="-4.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
-                     <children>
-                        <SVGPath content="M10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6zM10 6c0-3.314 2.686-6 6-6s6 2.686 6 6c0 3.314-2.686 6-6 6s-6-2.686-6-6zM24.002 14h-1.107l-6.222 12.633 2.327-11.633-3-3-3 3 2.327 11.633-6.222-12.633h-1.107c-3.998 0-3.998 2.687-3.998 6v10h24v-10c0-3.313 0-6-3.998-6z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
-                           <HBox.margin>
-                              <Insets left="7.0" />
-                           </HBox.margin></SVGPath>
-                        <Label styleClass="element_color" text="Doctor">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="42.0" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
-                     <children>
-                        <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin></SVGPath>
-                        <Label styleClass="element_color" text="User">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="73.0" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
-                     <children>
-                        <SVGPath content="M27 0h-24c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h24c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM26 28h-22v-24h22v24zM8 18h14v2h-14zM8 22h14v2h-14zM10 9c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3s-3-1.343-3-3zM15 12h-4c-1.65 0-3 0.9-3 2v2h10v-2c0-1.1-1.35-2-3-2zM27 0h-24c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h24c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM26 28h-22v-24h22v24zM8 18h14v2h-14zM8 22h14v2h-14zM10 9c0-1.657 1.343-3 3-3s3 1.343 3 3c0 1.657-1.343 3-3 3s-3-1.343-3-3zM15 12h-4c-1.65 0-3 0.9-3 2v2h10v-2c0-1.1-1.35-2-3-2z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin></SVGPath>
-                        <Label styleClass="element_color" text="Patient Record">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="105.0" onMouseClicked="#changeForm" spacing="5.0" styleClass="button_color">
-                     <children>
-                        <SVGPath content="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13z M21 8l-5 5-5-5-3 3 5 5-5 5 3 3 5-5 5 5 3-3-5-5 5-5zM21 8l-5 5-5-5-3 3 5 5-5 5 3 3 5-5 5 5 3-3-5-5 5-5z" scaleX="0.6" scaleY="0.6" styleClass="ico_color">
-                           <HBox.margin>
-                              <Insets left="5.0" />
-                           </HBox.margin></SVGPath>
-                        <Label styleClass="element_color" text="EXit">
-                           <font>
-                              <Font size="18.0" />
-                           </font></Label>
-                     </children>
-                  </HBox>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </VBox>
                </children>
                <HBox.margin>
                   <Insets />

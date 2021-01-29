@@ -10,112 +10,132 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
 
 
-<HBox prefHeight="500.0" prefWidth="700.0" styleClass="row_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkt.jdc.controller.UserController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="750.0" spacing="5.0" styleClass="background_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkt.jdc.controller.UserController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
    <children>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="269.0">
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
+      <HBox alignment="BOTTOM_LEFT" spacing="5.0">
          <children>
-            <GridPane hgap="5.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <HBox styleClass="text_field">
                <children>
-                  <Label text="User Name">
+                  <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label prefHeight="23.0" prefWidth="108.0" text="User Name">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tf_user" GridPane.columnIndex="1" />
-                  <Label layoutX="203.0" layoutY="14.0" text="Login ID" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="226.0" layoutY="44.0" text="Role" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="255.0" layoutY="74.0" text="Password" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="214.0" layoutY="104.0" text="Confirm" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="tf_loginId" layoutX="293.0" layoutY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ComboBox fx:id="cbo_role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <PasswordField fx:id="pf_pass" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <PasswordField fx:id="pf_confirm" layoutX="293.0" layoutY="102.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <HBox alignment="CENTER_LEFT" spacing="3.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#save" text="Save">
-                           <styleClass>
-                              <String fx:value="button_color" />
-                              <String fx:value="element_color" />
-                           </styleClass>
-                        </Button>
-                        <Button layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#delete" text="Delete">
-                           <styleClass>
-                              <String fx:value="button_color" />
-                              <String fx:value="element_color" />
-                           </styleClass>
-                        </Button>
-                     </children>
-                  </HBox>
+                  <TextField fx:id="tf_user" styleClass="background_color" />
                </children>
-            </GridPane>
-            <Label fx:id="lb_message" />
+            </HBox>
+            <HBox styleClass="text_field">
+               <children>
+                  <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label prefHeight="23.0" prefWidth="90.0" text="Login ID">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_loginId" styleClass="background_color" />
+               </children>
+            </HBox>
+            <HBox styleClass="text_field">
+               <children>
+                  <SVGPath content="M30 19l-9 9-3-3-2 2 5 5 11-11zM30 19l-9 9-3-3-2 2 5 5 11-11z M14 24h10v-3.598c-2.101-1.225-4.885-2.066-8-2.321v-1.649c2.203-1.242 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h14v-2zM14 24h10v-3.598c-2.101-1.225-4.885-2.066-8-2.321v-1.649c2.203-1.242 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h14v-2z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <ComboBox fx:id="cbo_role" prefWidth="150.0" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox spacing="5.0">
+         <children>
+            <HBox prefHeight="32.0" prefWidth="277.0" styleClass="text_field">
+               <children>
+                  <SVGPath content="M22 0c-5.523 0-10 4.477-10 10 0 0.626 0.058 1.238 0.168 1.832l-12.168 12.168v6c0 1.105 0.895 2 2 2h2v-2h4v-4h4v-4h4l2.595-2.595c1.063 0.385 2.209 0.595 3.405 0.595 5.523 0 10-4.477 10-10s-4.477-10-10-10zM24.996 10.004c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zM22 0c-5.523 0-10 4.477-10 10 0 0.626 0.058 1.238 0.168 1.832l-12.168 12.168v6c0 1.105 0.895 2 2 2h2v-2h4v-4h4v-4h4l2.595-2.595c1.063 0.385 2.209 0.595 3.405 0.595 5.523 0 10-4.477 10-10s-4.477-10-10-10zM24.996 10.004c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label prefHeight="23.0" prefWidth="83.0" text="Password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="pf_pass" prefHeight="27.0" prefWidth="149.0" styleClass="background_color" />
+               </children>
+            </HBox>
+            <HBox styleClass="text_field">
+               <children>
+                  <SVGPath content="M22 0c-5.523 0-10 4.477-10 10 0 0.626 0.058 1.238 0.168 1.832l-12.168 12.168v6c0 1.105 0.895 2 2 2h2v-2h4v-4h4v-4h4l2.595-2.595c1.063 0.385 2.209 0.595 3.405 0.595 5.523 0 10-4.477 10-10s-4.477-10-10-10zM24.996 10.004c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zM22 0c-5.523 0-10 4.477-10 10 0 0.626 0.058 1.238 0.168 1.832l-12.168 12.168v6c0 1.105 0.895 2 2 2h2v-2h4v-4h4v-4h4l2.595-2.595c1.063 0.385 2.209 0.595 3.405 0.595 5.523 0 10-4.477 10-10s-4.477-10-10-10zM24.996 10.004c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label text="Confirm">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="pf_confirm" styleClass="background_color" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="3.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#save" text="Save">
+                     <styleClass>
+                        <String fx:value="button_color" />
+                        <String fx:value="element_color" />
+                     </styleClass>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#delete" text="Delete">
+                     <styleClass>
+                        <String fx:value="button_color" />
+                        <String fx:value="element_color" />
+                     </styleClass>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
             <CheckBox fx:id="chk_active" mnemonicParsing="false" selected="true" text="active" visible="false" />
             <TextField fx:id="tf_id" prefHeight="27.0" prefWidth="62.0" visible="false" />
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="lb_message" />
+               </children>
+            </HBox>
          </children>
-      </VBox>
-      <VBox HBox.hgrow="ALWAYS">
+      </HBox>
+      <VBox VBox.vgrow="ALWAYS">
          <children>
             <TableView fx:id="tv_user" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="col_num" prefWidth="43.0" resizable="false" text="No." />
-                <TableColumn prefWidth="129.0" resizable="false" text="User Name" >
+                <TableColumn prefWidth="129.0" resizable="false" text="User Name">
                 	<cellValueFactory>
-                		<PropertyValueFactory property="name"/>
+                		<PropertyValueFactory property="name" />
                 	</cellValueFactory>
                 </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Login ID"  >
+                  <TableColumn prefWidth="75.0" text="Login ID">
                 	<cellValueFactory>
-                		<PropertyValueFactory property="loginId"/>
+                		<PropertyValueFactory property="loginId" />
                 	</cellValueFactory>
                 </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Role"  >
+                  <TableColumn prefWidth="75.0" text="Role">
                 	<cellValueFactory>
-                		<PropertyValueFactory property="role"/>
+                		<PropertyValueFactory property="role" />
                 	</cellValueFactory>
                 </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Password"  >
+                  <TableColumn prefWidth="75.0" text="Password">
                 	<cellValueFactory>
-                		<PropertyValueFactory property="password"/>
+                		<PropertyValueFactory property="password" />
                 	</cellValueFactory>
                 </TableColumn>
               </columns>
@@ -126,4 +146,4 @@
          </children>
       </VBox>
    </children>
-</HBox>
+</VBox>

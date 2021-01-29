@@ -28,7 +28,7 @@ public class LoginController {
 
 	Button btnEnter = new Button("GoTo");
 	Button btnCancelButton = new Button("Cancel");
-	private String front_color = "#af0069";
+	private String front_color = "#03506f";
 	private String back_color = "#DDDDDD";
 	private MKLogin mk;
 	private MKMessage mm;

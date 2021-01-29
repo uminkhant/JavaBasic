@@ -1,11 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="750.0" spacing="10.0" styleClass="background_color" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkt.jdc.controller.PatientController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
    <children>
-      <Label text="Doctor" />
+      <HBox alignment="BOTTOM_LEFT" prefHeight="50.0" spacing="5.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" styleClass="text_field">
+               <children>
+                  <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label prefHeight="23.0" prefWidth="63.0" text="Patient">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_patient" styleClass="background_color" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="134.0" styleClass="text_field">
+               <children>
+                  <SVGPath content="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1zM31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label text="Age">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_age" prefHeight="27.0" prefWidth="57.0" styleClass="background_color" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="242.0" styleClass="text_field">
+               <children>
+                  <SVGPath content="M8 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3zM8 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z M26 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3zM26 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z M8 8h-6c-1.105 0-2 0.895-2 2v10h2v12h2.5v-12h1v12h2.5v-12h2v-10c0-1.105-0.895-2-2-2zM8 8h-6c-1.105 0-2 0.895-2 2v10h2v12h2.5v-12h1v12h2.5v-12h2v-10c0-1.105-0.895-2-2-2z M30.469 16l1.531-1.109-4.165-6.441c-0.185-0.281-0.499-0.45-0.835-0.45h-8c-0.336 0-0.65 0.169-0.835 0.45l-4.165 6.441 1.531 1.109 3.458-4.487 1.202 2.804-4.191 7.683h3.833l0.667 10h2v-10h1v10h2l0.667-10h3.833l-4.191-7.683 1.202-2.804 3.458 4.487zM30.469 16l1.531-1.109-4.165-6.441c-0.185-0.281-0.499-0.45-0.835-0.45h-8c-0.336 0-0.65 0.169-0.835 0.45l-4.165 6.441 1.531 1.109 3.458-4.487 1.202 2.804-4.191 7.683h3.833l0.667 10h2v-10h1v10h2l0.667-10h3.833l-4.191-7.683 1.202-2.804 3.458 4.487zM8 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3zM8 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z M26 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3zM26 3c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z M8 8h-6c-1.105 0-2 0.895-2 2v10h2v12h2.5v-12h1v12h2.5v-12h2v-10c0-1.105-0.895-2-2-2zM8 8h-6c-1.105 0-2 0.895-2 2v10h2v12h2.5v-12h1v12h2.5v-12h2v-10c0-1.105-0.895-2-2-2z M30.469 16l1.531-1.109-4.165-6.441c-0.185-0.281-0.499-0.45-0.835-0.45h-8c-0.336 0-0.65 0.169-0.835 0.45l-4.165 6.441 1.531 1.109 3.458-4.487 1.202 2.804-4.191 7.683h3.833l0.667 10h2v-10h1v10h2l0.667-10h3.833l-4.191-7.683 1.202-2.804 3.458 4.487zM30.469 16l1.531-1.109-4.165-6.441c-0.185-0.281-0.499-0.45-0.835-0.45h-8c-0.336 0-0.65 0.169-0.835 0.45l-4.165 6.441 1.531 1.109 3.458-4.487 1.202 2.804-4.191 7.683h3.833l0.667 10h2v-10h1v10h2l0.667-10h3.833l-4.191-7.683 1.202-2.804 3.458 4.487z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label prefHeight="23.0" prefWidth="68.0" text="Gender">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbo_gender" prefHeight="20.0" prefWidth="150.0" />
+               </children>
+               <padding>
+                  <Insets bottom="2.0" />
+               </padding>
+            </HBox>
+            <RadioButton fx:id="rbn_yes" accessibleRole="BUTTON" lineSpacing="5.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" scaleX="0.6" scaleY="0.6" selected="true" text="Single">
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </RadioButton>
+         </children>
+         <padding>
+            <Insets bottom="3.0" />
+         </padding>
+      </HBox>
+      <HBox spacing="5.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="286.0" styleClass="text_field">
+               <children>
+                  <SVGPath content="M31.793 18c0.25 1.734 0.413 4.106-0.364 5.014-1.286 1.501-9.428 1.501-9.428-1.501 0-1.512 1.339-2.504 0.053-4.006-1.265-1.477-3.532-1.501-6.054-1.501s-4.789 0.024-6.054 1.501c-1.286 1.501 0.054 2.493 0.054 4.006 0 3.003-8.143 3.003-9.429 1.501-0.777-0.908-0.615-3.28-0.364-5.014 0.193-1.157 0.679-2.406 2.236-4 0-0 0-0 0-0 2.336-2.179 5.87-3.961 13.432-3.999v-0.001c0.042 0 0.083 0 0.125 0s0.083-0 0.125-0v0.001c7.562 0.038 11.096 1.82 13.432 3.999 0 0 0 0 0 0 1.557 1.594 2.043 2.842 2.236 4zM31.793 18c0.25 1.734 0.413 4.106-0.364 5.014-1.286 1.501-9.428 1.501-9.428-1.501 0-1.512 1.339-2.504 0.053-4.006-1.265-1.477-3.532-1.501-6.054-1.501s-4.789 0.024-6.054 1.501c-1.286 1.501 0.054 2.493 0.054 4.006 0 3.003-8.143 3.003-9.429 1.501-0.777-0.908-0.615-3.28-0.364-5.014 0.193-1.157 0.679-2.406 2.236-4 0-0 0-0 0-0 2.336-2.179 5.87-3.961 13.432-3.999v-0.001c0.042 0 0.083 0 0.125 0s0.083-0 0.125-0v0.001c7.562 0.038 11.096 1.82 13.432 3.999 0 0 0 0 0 0 1.557 1.594 2.043 2.842 2.236 4z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="65.0" text="Contact" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_contact" prefHeight="27.0" prefWidth="188.0" styleClass="background_color" />
+               </children>
+            </HBox>
+            <HBox alignment="BOTTOM_LEFT" styleClass="text_field" HBox.hgrow="ALWAYS">
+               <children>
+                  <SVGPath content="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zM16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z" scaleX="0.6" scaleY="0.6" styleClass="ico_color" />
+                  <Label text="Address">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_address" styleClass="background_color" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="3.0">
+         <children>
+            <HBox spacing="3.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#save" text="Save">
+                     <styleClass>
+                        <String fx:value="button_color" />
+                        <String fx:value="element_color" />
+                     </styleClass>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#delete" text="Delete">
+                     <styleClass>
+                        <String fx:value="button_color" />
+                        <String fx:value="element_color" />
+                     </styleClass>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <CheckBox fx:id="chk_active" mnemonicParsing="false" text="active" visible="false" />
+            <TextField fx:id="tf_id" prefWidth="20.0" visible="false" />
+            <Label fx:id="lb_message" />
+         </children>
+      </HBox>
+      <VBox VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="tv_patient" prefHeight="200.0" prefWidth="818.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="col_num" prefWidth="43.0" resizable="false" text="No." />
+                <TableColumn prefWidth="129.0" resizable="false" text="Patient">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="name" />
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Age">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="age" />
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Gender">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="gender" />
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Married">
+                	<cellValueFactory>
+                		<PropertyValueFactory property="married" />
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Contact">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="contact" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="141.0" resizable="false" text="Address">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="address" />
+                     </cellValueFactory>
+                  </TableColumn>
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
    </children>
 </VBox>

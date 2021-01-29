@@ -17,7 +17,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import mkt.lib.MKMessage;
 import mkt.lib.MKMessage.MessageType;
@@ -37,13 +36,10 @@ public class PatientController implements Initializable {
 	private RadioButton rbn_yes;
 
 	@FXML
-	private RadioButton rbn_no;
-
-	@FXML
 	private TextField tf_contact;
 
 	@FXML
-	private TextArea ta_address;
+	private TextField tf_address;
 
 	@FXML
 	private Label lb_message;
@@ -96,7 +92,7 @@ public class PatientController implements Initializable {
 			if (tf_contact.getText().isEmpty() || tf_contact.getText() == null) {
 				throw new ClinicException("Please type patient name ");
 			}
-			if (ta_address.getText().isEmpty() || ta_address.getText() == null) {
+			if (tf_address.getText().isEmpty() || tf_address.getText() == null) {
 				throw new ClinicException("Please type patient name ");
 			}
 			if (tf_age.getText().isEmpty() || tf_age.getText() == null) {
@@ -109,7 +105,7 @@ public class PatientController implements Initializable {
 			p.setGender(cbo_gender.getValue() == null ? Gender.Male : cbo_gender.getValue());
 			p.setMarried(rbn_yes.isSelected());
 			p.setContact(tf_contact.getText());
-			p.setAddress(ta_address.getText());
+			p.setAddress(tf_address.getText());
 			p.setActive(true);
 
 			if (tf_id.getText() == null || tf_id.getText().isEmpty()) {
@@ -133,7 +129,7 @@ public class PatientController implements Initializable {
 		tf_contact.clear();
 		tf_id.clear();
 		tf_patient.clear();
-		ta_address.clear();
+		tf_address.clear();
 		cbo_gender.getSelectionModel().clearSelection();
 		rbn_yes.setSelected(true);
 		tf_patient.setDisable(false);
@@ -161,13 +157,13 @@ public class PatientController implements Initializable {
 				tf_patient.setText(p.getName());
 				tf_age.setText(String.valueOf(p.getAge()));
 				tf_contact.setText(p.getContact());
-				ta_address.setText(p.getAddress());
+				tf_address.setText(p.getAddress());
 				cbo_gender.setValue(p.getGender());
 
 				if (p.isMarried()) {
 					rbn_yes.setSelected(true);
 				} else {
-					rbn_no.setSelected(true);
+					rbn_yes.setSelected(true);
 				}
 
 				tf_patient.setDisable(true);
