@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import com.mkt.jdc.model.User;
 
+import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,6 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class MainController {
 
@@ -28,6 +31,7 @@ public class MainController {
 	private StackPane st_pane;
 
 	private static User user;
+	
 
 	public static User getUser() {
 		return user;
@@ -39,18 +43,25 @@ public class MainController {
 		HBox hbButton = (HBox) event.getSource();
 
 		hbButton.getChildren().filtered(lb -> lb instanceof Label).forEach(e -> {
+
 			showSubForm(e);
 		});
 	}
 
 	private void showSubForm(Node e) {
 		Label lb = (Label) e;
+		
+		if (lb.getText().equals("EXIT")) {
+			
+			Platform.exit();
+		}
 
 		try {
 			Parent root = FXMLLoader
 					.load(MainController.class.getResource("fxml/" + lb.getText().toLowerCase() + ".fxml"));
 			st_pane.getChildren().clear();
 			st_pane.getChildren().add(root);
+			slideForm(root);
 
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -58,16 +69,28 @@ public class MainController {
 
 	}
 
+	private void slideForm(Node node) {
+
+		TranslateTransition tt = new TranslateTransition();
+		tt.setNode(node);
+		tt.setFromX(700);
+		tt.setToX(0);
+		tt.setAutoReverse(false);
+		tt.setCycleCount(1);
+		tt.setDuration(Duration.millis(1000));
+		tt.play();
+	}
+
 	public static void showMainForm(User user) {
 		MainController.user = user;
-		
+
 		try {
-			FXMLLoader loader=new FXMLLoader(MainController.class.getResource("fxml/Main.fxml"));
-			Parent root=loader.load();
-			
-			MainController controller=loader.getController();
+			FXMLLoader loader = new FXMLLoader(MainController.class.getResource("fxml/Main.fxml"));
+			Parent root = loader.load();
+
+			MainController controller = loader.getController();
 			controller.lb_user.setText(user.getName());
-			
+
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
 			stage.show();

@@ -14,4 +14,10 @@ public class Patient {
 	private String address;
 	private String contact;
 	private boolean active;
+	
+
+	@Override
+	public String toString() {
+		return name;
+	}
 }

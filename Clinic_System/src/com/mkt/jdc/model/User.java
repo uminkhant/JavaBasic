@@ -16,4 +16,10 @@ public class User {
 	public enum Role{
 		Admin,Cashier,Doctor
 	}
+	
+	@Override
+	public String toString() {
+		
+		return name;
+	}
 }

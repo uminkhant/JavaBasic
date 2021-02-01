@@ -8,8 +8,11 @@
 
 
 .element_color{
-	-fx-text-fill: #DDDDDD;
-	
+	-fx-text-fill: #DDDDDD;	
+}
+
+.border_color{
+	-fx-border-color: #03506f;
 }
 
 .ico_color{
@@ -22,12 +25,14 @@
 	-fx-border-radius: 10px;
 }
 
-.button_color:hover{
+.button_color:hover,.button_color:focused{
 	-fx-background-color:#62959c;
 }
+
 .text_field {
     -fx-background-color: #03506f , #DDDDDD , #DDDDDD;
     -fx-background-insets: 0.0 -1.0 -1.0 -1.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
+     -fx-border-insets: 0.0 -1.0 -1.0 -1.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
     
 }
 
@@ -63,10 +68,7 @@
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
-.table-row-cell:highlighted {
-    -fx-background-color: #af0069;
-    -fx-background-radius: 15px;
-}
+
 .table-view .virtual-flow .scroll-bar:vertical .thumb{
     -fx-background-color:  linear-gradient(to bottom, #03506f, #1dbbdd44);
 }
@@ -74,11 +76,7 @@
     -fx-background-color:  linear-gradient(to right, #03506f, #1dbbdd44);
 }
 
-.combo-box:hover,.combo-box:selected,.combo-box:active{
-    -fx-border-color:#DDDDDD;
-    -fx-border-style:none;
-   
-}
+
 .combo-box .arrow{
     -fx-background-color:#03506f;
 }
