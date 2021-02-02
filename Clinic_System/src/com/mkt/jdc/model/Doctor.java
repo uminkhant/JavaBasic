@@ -14,4 +14,10 @@ public class Doctor {
 	private boolean active;
 	private User user;
 	
+	@Override
+	public String toString() {
+		
+		return name;
+	}
+	
 }
