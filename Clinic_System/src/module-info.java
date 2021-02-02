@@ -7,6 +7,7 @@ module clinic_system {
 	requires javafx.controls;
 	requires java.sql;
 	requires MKTLib;
+	requires javafx.base;
 	
 	opens com.mkt.jdc.controller;
 	opens com.mkt.jdc.model to javafx.base;

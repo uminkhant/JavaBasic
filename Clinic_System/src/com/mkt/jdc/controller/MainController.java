@@ -1,6 +1,8 @@
 package com.mkt.jdc.controller;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import com.mkt.jdc.model.User;
 
@@ -8,9 +10,11 @@ import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -19,7 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class MainController {
+public class MainController implements Initializable{
 
 	@FXML
 	private Label lb_user;
@@ -29,9 +33,17 @@ public class MainController {
 
 	@FXML
 	private StackPane st_pane;
+	@FXML
+	private PieChart pi_do_qty;
 
 	private static User user;
-	
+
+	private static MainController controller;
+
+
+	public static MainController getMain() {
+		return controller;
+	}
 
 	public static User getUser() {
 		return user;
@@ -44,21 +56,20 @@ public class MainController {
 
 		hbButton.getChildren().filtered(lb -> lb instanceof Label).forEach(e -> {
 
-			showSubForm(e);
+			Label lb = (Label) e;
+
+			if (lb.getText().equals("EXIT")) {
+
+				Platform.exit();
+			}
+			showSubForm(lb.getText());
 		});
 	}
 
-	private void showSubForm(Node e) {
-		Label lb = (Label) e;
-		
-		if (lb.getText().equals("EXIT")) {
-			
-			Platform.exit();
-		}
+	public void showSubForm(String formName) {
 
 		try {
-			Parent root = FXMLLoader
-					.load(MainController.class.getResource("fxml/" + lb.getText().toLowerCase() + ".fxml"));
+			Parent root = FXMLLoader.load(MainController.class.getResource("fxml/" + formName.toLowerCase() + ".fxml"));
 			st_pane.getChildren().clear();
 			st_pane.getChildren().add(root);
 			slideForm(root);
@@ -88,8 +99,7 @@ public class MainController {
 			FXMLLoader loader = new FXMLLoader(MainController.class.getResource("fxml/Main.fxml"));
 			Parent root = loader.load();
 
-			MainController controller = loader.getController();
-			controller.lb_user.setText(user.getName());
+			controller = loader.getController();
 
 			Stage stage = new Stage();
 			stage.setScene(new Scene(root));
@@ -98,6 +108,11 @@ public class MainController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		showSubForm("dashboard");
 	}
 
 }
