@@ -1,6 +1,7 @@
 package com.mkt.jdc.model;
 
-import java.util.List;
+
+import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +12,8 @@ public class Disease {
 	private Doctor doctor;
 	private Patient patient;
 	private String dis;
-	private List<PatientHistory>phs;
-	
+	private String medicine;
+	private double charge;
+	private String remark;
+	private LocalDate dt_check;
 }

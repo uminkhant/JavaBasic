@@ -62,7 +62,7 @@ public class MainController implements Initializable{
 
 				Platform.exit();
 			}
-			showSubForm(lb.getText());
+			showSubForm(lb.getText().replaceAll("\\s+", ""));
 		});
 	}
 
