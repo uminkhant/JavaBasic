@@ -2,8 +2,6 @@ package com.mkt.jdc.controller;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import com.mkt.jdc.model.Disease;
@@ -17,9 +15,9 @@ import com.mkt.jdc.util.ClinicException;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TableColumn;
@@ -180,11 +178,12 @@ public class DashBoardController implements Initializable {
 
 			HBox hb = new HBox();
 			hb.getChildren().addAll(path, lb);
-			hb.setSpacing(5);
+			hb.setSpacing(2);
 			hb.setAlignment(Pos.CENTER);
 
 			getChildren().addAll(hb, sp);
 			setSpacing(5);
+			setPadding(new Insets(5));
 			setAlignment(Pos.CENTER);
 			getStyleClass().add("button_color");
 			setPrefSize(175, 50);

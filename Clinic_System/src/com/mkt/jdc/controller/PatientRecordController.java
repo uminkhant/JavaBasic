@@ -1,7 +1,6 @@
 package com.mkt.jdc.controller;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import com.mkt.jdc.model.Disease;
@@ -43,6 +42,8 @@ public class PatientRecordController implements Initializable{
 
     @FXML
     private Label lb_message;
+    @FXML
+    private Label lb_total;
 
     @FXML
     private TableView<Disease> tv_disease;
