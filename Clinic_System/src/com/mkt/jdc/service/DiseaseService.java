@@ -60,12 +60,12 @@ public class DiseaseService {
 
 		}
 		if (from != null) {
-			sb.append(" dis.dt_check >=?");
-			temp.add(from);
+			sb.append(" and dis.dt_check >=?");
+			temp.add(Date.valueOf(from));
 		}
 		if (to != null) {
-			sb.append(" dis.dt_check <=?");
-			temp.add(to);
+			sb.append(" and dis.dt_check <=?");
+			temp.add(Date.valueOf(to));
 		}
 
 		try (Connection con = getConnection(); PreparedStatement stmt = con.prepareStatement(sb.toString())) {
@@ -73,6 +73,7 @@ public class DiseaseService {
 			
 			for(int x=0;x<temp.size();x++) {
 				stmt.setObject(x+1, temp.get(x));
+				
 			}
 			
 			ResultSet rs=stmt.executeQuery();
@@ -95,6 +96,7 @@ public class DiseaseService {
 			}
 			
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ClinicException("DiseasesService save error");
 		}
 		return list;

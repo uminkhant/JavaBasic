@@ -92,7 +92,7 @@ public class DoctorController implements Initializable {
 			}
 			
 			d=new Doctor();
-			d.setName(tf_name.getText());
+			d.setName("Dr."+tf_name.getText());
 			d.setContact(tf_contact.getText());
 			d.setSpecialist(tf_specialist.getText());
 			d.setUser(cbo_user.getValue());
