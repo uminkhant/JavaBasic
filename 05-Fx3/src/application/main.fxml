@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" spacing="50.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <HBox alignment="CENTER" style="-fx-background-color: red;">
+         <children>
+            <Label prefHeight="58.0" prefWidth="343.0" text="Calculator Form" textFill="#341ee3">
+               <font>
+                  <Font name="Arial Narrow" size="50.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <VBox alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="First Digit">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_frist" />
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="5.0">
+               <children>
+                  <Label text="Second Digit">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_second" />
+               </children>
+            </HBox>
+            <HBox fx:id="hb_radio" alignment="CENTER" spacing="3.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" selected="true" text="+" textFill="#d30e0e">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="operator" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton layoutX="245.0" layoutY="10.0" mnemonicParsing="false" text="-" textFill="#d30e0e" toggleGroup="$operator" />
+                  <RadioButton layoutX="290.0" layoutY="10.0" mnemonicParsing="false" text="x" textFill="#d30e0e" toggleGroup="$operator" />
+                  <RadioButton layoutX="336.0" layoutY="10.0" mnemonicParsing="false" text="/" textFill="#d30e0e" toggleGroup="$operator" />
+                  <RadioButton layoutX="381.0" layoutY="10.0" mnemonicParsing="false" text="\%" textFill="#d30e0e" toggleGroup="$operator" />
+               </children>
+               <padding>
+                  <Insets left="110.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" spacing="3.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#enter" text="Enter">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="282.0" layoutY="10.0" mnemonicParsing="false" onAction="#clear" text="Clear">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="50.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <TextField fx:id="tf_result" VBox.vgrow="ALWAYS">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <effect>
+      <InnerShadow />
+   </effect>
+</VBox>
