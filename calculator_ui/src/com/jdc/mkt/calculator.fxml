@@ -19,12 +19,13 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <Label fx:id="lb_sign" textFill="WHITE" />
+                  <Label fx:id="lb_ope" textFill="WHITE" />
                   <Label fx:id="lb_first" textFill="WHITE" />
                </children>
             </HBox>
             <HBox alignment="BOTTOM_RIGHT" VBox.vgrow="ALWAYS">
                <children>
+                  <Label fx:id="lb_sign" text="+" textFill="WHITE" />
                   <Label fx:id="lb_current" text="0" textFill="WHITE">
                      <font>
                         <Font size="40.0" />

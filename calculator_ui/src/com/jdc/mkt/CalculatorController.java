@@ -12,6 +12,8 @@ import javafx.scene.layout.GridPane;
 public class CalculatorController implements Initializable {
 
 	@FXML
+	private Label lb_ope;
+	@FXML
 	private Label lb_sign;
 
 	@FXML
@@ -22,8 +24,6 @@ public class CalculatorController implements Initializable {
 
 	@FXML
 	private GridPane gd_btn;
-
-	private static String ope;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -37,56 +37,74 @@ public class CalculatorController implements Initializable {
 
 	private void check(Button b) {
 
-		if (b.getText().matches("[0-9]")) {
+		if (b.getText().matches("[0-9.]") || b.getText().equals("+/-")) {
 			showOnLabel(b.getText());
 
 		} else {
 
-			showOnOpeartor(b.getText());
-
+			checkOpeartor(b.getText());
 		}
 	}
 
 	private void showOnLabel(String txt) {
 
-		if (!lb_current.getText().equals("0")) {
-			lb_current.setText(lb_current.getText().concat(txt));
-		} else {
+		if (lb_current.getText().equals("0")) {
 			lb_current.setText(txt);
-		}
 
-	}
-
-	private void showOnOpeartor(String txt) {
-
-		if (!txt.equals("=")) {
-			lb_sign.setText(txt);
-			lb_first.setText(lb_current.getText());
-			lb_current.setText("0");
+		} else if (txt.equals("+/-")) {
+			lb_sign.setText(lb_sign.getText().startsWith("+") ? "-" : "+");
 		} else {
-			double a=Double.parseDouble(lb_first.getText());
-			double b=Double.parseDouble(lb_current.getText());
-			calculate(a,b,lb_sign.getText());
+			lb_current.setText(lb_current.getText().concat(txt));
+
 		}
 	}
 
-	private void calculate(double a, double b, String text) {
-		switch (text) {
-		case "+":
-			lb_current.setText(String.valueOf(a+b));
-			break;
-		case "-":
-			lb_current.setText(String.valueOf(a-b));
-			break;
-		case "X":
-			lb_current.setText(String.valueOf(a*b));
-			break;
-		case "/":
-			lb_current.setText(String.valueOf(a/b));
-			break;
+	private void checkOpeartor(String txt) {
 
-		default:
+		switch (txt) {
+		case "C":
+			lb_current.setText("0");
+			lb_first.setText("");
+			lb_ope.setText("");
+			lb_sign.setText("+");
 			break;
+		case "=":
+			
+			lb_current.setText(String.format("%,.3f", calculate()));
+			lb_sign.setText("+");
+			
+			break;
+		default:
+			lb_ope.setText(txt);
+			lb_first.setText(lb_current.getText().startsWith("-")?lb_current.getText(): lb_sign.getText() + lb_current.getText());
+			lb_current.setText("0");
+			
+			break;
+		}
+	}
+
+	private double calculate() {
+
+		double a = Double.parseDouble(lb_first.getText());
+		double b = Double.parseDouble(lb_current.getText());
+		
+		switch (lb_ope.getText()) {
+		case "+":
+			return a + b;
+
+		case "-":
+			return a - b;
+
+		case "X":
+			return a * b;
+
+		case "/":
+			return a / b;
+
+		case "%":
+			return a % b;
+		default:
+			return 0;
 		}
 	}
 
