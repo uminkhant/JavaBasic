@@ -95,10 +95,10 @@ public class CalculatorController implements Initializable {
 		case "-":
 			return a - b;
 
-		case "X":
+		case "×":
 			return a * b;
 
-		case "/":
+		case "÷":
 			return a / b;
 
 		case "%":

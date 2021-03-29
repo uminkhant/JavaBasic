@@ -19,22 +19,29 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <Label fx:id="lb_ope" textFill="WHITE" />
                   <Label fx:id="lb_first" textFill="WHITE" />
                </children>
             </HBox>
-            <HBox alignment="BOTTOM_RIGHT" VBox.vgrow="ALWAYS">
+            <HBox alignment="BOTTOM_LEFT" VBox.vgrow="ALWAYS">
                <children>
-                  <Label fx:id="lb_sign" text="+" textFill="WHITE" />
-                  <Label fx:id="lb_current" text="0" textFill="WHITE">
+                  <Label fx:id="lb_ope" textFill="#e99d28">
                      <font>
-                        <Font size="40.0" />
-                     </font>
-                  </Label>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <HBox alignment="BOTTOM_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="lb_sign" text="+" textFill="WHITE" />
+                        <Label fx:id="lb_current" text="0" textFill="WHITE">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </HBox>
                </children>
-               <padding>
-                  <Insets right="5.0" />
-               </padding>
             </HBox>
          </children>
          <padding>
@@ -66,7 +73,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="11.0" mnemonicParsing="false" prefHeight="46.5" prefWidth="59.0" style="-fx-background-color: #E99D28;" text="/" textFill="WHITE" GridPane.columnIndex="3">
+            <Button layoutX="10.0" layoutY="11.0" mnemonicParsing="false" prefHeight="46.5" prefWidth="59.0" style="-fx-background-color: #E99D28;" text="÷" textFill="WHITE" GridPane.columnIndex="3">
                <font>
                   <Font size="18.0" />
                </font>
@@ -91,7 +98,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="130.0" layoutY="59.0" mnemonicParsing="false" prefHeight="46.5" prefWidth="59.0" style="-fx-background-color: #E99D28;" text="X" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button layoutX="130.0" layoutY="59.0" mnemonicParsing="false" prefHeight="46.5" prefWidth="59.0" style="-fx-background-color: #E99D28;" text="×" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
