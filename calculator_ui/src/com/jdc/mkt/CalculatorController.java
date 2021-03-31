@@ -52,6 +52,7 @@ public class CalculatorController implements Initializable {
 			lb_current.setText(txt);
 
 		} else if (txt.equals("+/-")) {
+			
 			lb_sign.setText(lb_sign.getText().startsWith("+") ? "-" : "+");
 		} else {
 			lb_current.setText(lb_current.getText().concat(txt));
@@ -70,7 +71,7 @@ public class CalculatorController implements Initializable {
 			break;
 		case "=":
 			
-			lb_current.setText(String.format("%,.3f", calculate()));
+			lb_current.setText(String.format("%,.2f", calculate()));
 			lb_sign.setText("+");
 			
 			break;
