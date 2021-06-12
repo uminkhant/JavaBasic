@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SRC_System.jnlp">
+  <information>
+    <title>SRC_System</title>
+    <vendor>com.jdc.mkt</vendor>
+    <description>SRCSystem</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SRC_System.jar" size="37005" download="eager" />
+    <jar href="libs/lombok-1.18.16.jar" size="1914266" download="eager" />
+    <jar href="libs/mklogin.1.8.jar" size="13638" download="eager" />
+    <jar href="libs/mysql-connector-java-8.0.19.jar" size="2356711" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="com.jdc.mkt.Main"  name="SRCSystem" />
+  <update check="background"/>
+</jnlp>

@@ -1,0 +1,49 @@
+
+
+.front-color{
+	-fx-background-color: #0F6C8B;
+}
+.header-background{
+	-fx-background-color:#E8EAEC;
+}
+.back-color,.border-color{
+	-fx-background-color: #EEEEEE;
+	
+	
+}
+
+.border-color{
+	-fx-background-color: #EEEEEE;
+	-fx-border-color: #0F6C8B;
+	-fx-border-width: 3px;
+	-fx-border-radius: 5px;
+	-fx-background-radius: 5px;
+}
+
+.txt-color{
+	-fx-text-fill:#3388A8;
+	
+}
+.svg-color{
+	-fx-fill: #3388A8;
+	-fx-scale-x:  0.7;
+	-fx-scale-y:0.7;
+}
+.txt-color:hover{
+	-fx-text-fill:#ffffff;
+}
+.txt-size{
+	-fx-font-size: 18px;
+		
+}
+
+.button-design{
+	-fx-border-radius: 5px;
+	-fx-background-radius: 5px;
+	-fx-pref-width: 70px;
+	-fx-pref-height: 30px;
+	-fx-background-color: #0F6C8B;
+	
+}
+
+

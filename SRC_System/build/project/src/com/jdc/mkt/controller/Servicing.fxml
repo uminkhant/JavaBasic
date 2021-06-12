@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.control.cell.PropertyValueFactory ?>
+
+<VBox maxHeight="450.0" maxWidth="500.0" minHeight="450.0" minWidth="-Infinity" prefWidth="650.0" spacing="10.0" styleClass="header-background" stylesheets="@../util/application.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mkt.controller.ServicingController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="3.0">
+         <children>
+            <Label prefHeight="23.0" prefWidth="95.0" styleClass="txt-size" text="Department">
+               <padding>
+                  <Insets right="5.0" />
+               </padding></Label>
+            <ComboBox fx:id="cbo_department" prefHeight="27.0" prefWidth="162.0" />
+            <TextField fx:id="tf_id" prefHeight="27.0" prefWidth="38.0" visible="false" />
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="lb_save">
+                     <graphic>
+                        <SVGPath content="M16 18l8-8h-6v-8h-4v8h-6zM23.273 14.727l-2.242 2.242 8.128 3.031-13.158 4.907-13.158-4.907 8.127-3.031-2.242-2.242-8.727 3.273v8l16 6 16-6v-8zM16 18l8-8h-6v-8h-4v8h-6zM23.273 14.727l-2.242 2.242 8.128 3.031-13.158 4.907-13.158-4.907 8.127-3.031-2.242-2.242-8.727 3.273v8l16 6 16-6v-8z" styleClass="svg-color" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Save" />
+                     </tooltip>
+                  </Label>
+                  <Label layoutX="267.0" layoutY="10.0">
+                     <graphic>
+                        <SVGPath fx:id="lb_delete" content="M4 10v20c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-20h-22zM10 28h-2v-14h2v14zM14 28h-2v-14h2v14zM18 28h-2v-14h2v14zM22 28h-2v-14h2v14zM4 10v20c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-20h-22zM10 28h-2v-14h2v14zM14 28h-2v-14h2v14zM18 28h-2v-14h2v14zM22 28h-2v-14h2v14z M26.5 4h-6.5v-2.5c0-0.825-0.675-1.5-1.5-1.5h-7c-0.825 0-1.5 0.675-1.5 1.5v2.5h-6.5c-0.825 0-1.5 0.675-1.5 1.5v2.5h26v-2.5c0-0.825-0.675-1.5-1.5-1.5zM18 4h-6v-1.975h6v1.975zM26.5 4h-6.5v-2.5c0-0.825-0.675-1.5-1.5-1.5h-7c-0.825 0-1.5 0.675-1.5 1.5v2.5h-6.5c-0.825 0-1.5 0.675-1.5 1.5v2.5h26v-2.5c0-0.825-0.675-1.5-1.5-1.5zM18 4h-6v-1.975h6v1.975z" styleClass="svg-color" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Delete" />
+                     </tooltip>
+                  </Label>
+                  <Label layoutX="267.0" layoutY="10.0">
+                     <graphic>
+                        <SVGPath fx:id="lb_clear" content="M40,60 C42,48 44,30 25,32" styleClass="svg-color" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Clear" />
+                     </tooltip>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="3.0">
+         <children>
+            <Label prefHeight="23.0" prefWidth="98.0" styleClass="txt-size" text="Inform error " />
+            <TextArea fx:id="tf_error" prefHeight="42.0" prefWidth="546.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="3.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="97.0" styleClass="txt-size" text="Servicing">
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <TextArea fx:id="tf_service" prefHeight="43.0" prefWidth="542.0" />
+         </children>
+      </HBox>
+      <HBox layoutX="15.0" layoutY="91.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="94.0" styleClass="txt-size" text="Remark">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextArea fx:id="tf_remark" prefHeight="42.0" prefWidth="500.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <ScrollPane VBox.vgrow="ALWAYS">
+         <content>
+            <TableView fx:id="tv_servicing" prefHeight="423.0" prefWidth="1100.0">
+              <columns>
+                <TableColumn fx:id="col_num" prefWidth="75.0" resizable="false" text="No." />
+                <TableColumn prefWidth="128.0" text="Department" >
+                	<cellValueFactory>
+                		<PropertyValueFactory property="department"/>
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn minWidth="0.0" prefWidth="184.0" resizable="false" text="error" >
+                	<cellValueFactory>
+                		<PropertyValueFactory property="error"/>
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="202.0" resizable="false" text="Servicing" >
+                	<cellValueFactory>
+                		<PropertyValueFactory property="service"/>
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn minWidth="0.0" prefWidth="0.0" text="Service Date" >
+                	<cellValueFactory>
+                		<PropertyValueFactory property="service_dt"/>
+                	</cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="400.0" resizable="false" text="Remark" >
+                	<cellValueFactory>
+                		<PropertyValueFactory property="remark"/>
+                	</cellValueFactory>
+                </TableColumn>
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
